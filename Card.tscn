@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://c51kowxbp4fay"]
+[gd_scene load_steps=29 format=3 uid="uid://c51kowxbp4fay"]
 
 [ext_resource type="Texture2D" uid="uid://dle2ch02o3xfp" path="res://Organs.png" id="1_32cm7"]
+[ext_resource type="Script" path="res://card.gd" id="1_c3fh6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6m4ad"]
 atlas = ExtResource("1_32cm7")
@@ -182,7 +183,8 @@ animations = [{
 size = Vector2(408, 572)
 
 [node name="Card" type="Node2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.6, 0.6)
+script = ExtResource("1_c3fh6")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_taudc")

@@ -8,8 +8,9 @@
 [node name="Card Manager" type="Node2D" parent="."]
 script = ExtResource("1_np7a6")
 
-[node name="Card2" parent="Card Manager" instance=ExtResource("1_os24g")]
-position = Vector2(783, 340)
+[node name="Brain" parent="Card Manager" instance=ExtResource("1_os24g")]
+position = Vector2(480, 299)
+frame = 6
 
-[node name="Card" parent="Card Manager" instance=ExtResource("1_os24g")]
-position = Vector2(322, 316)
+[node name="Heart" parent="Card Manager" instance=ExtResource("1_os24g")]
+position = Vector2(929, 345)
