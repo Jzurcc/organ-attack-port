@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xw0kyi7vhbb7"
-path="res://.godot/imported/httpssteamusercontentaakamaihdnetugc1009314622592804171A377351B39A15DDBF68C620AF18926FD0916894D.png-eb85ed1c1eacc9e3d7873a0d1d1b49dd.ctex"
+uid="uid://brhrrk5gln3xb"
+path="res://.godot/imported/attacks2.png-e606d82da36737e9818e8fd86a9132fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/httpssteamusercontentaakamaihdnetugc1009314622592804171A377351B39A15DDBF68C620AF18926FD0916894D.png"
-dest_files=["res://.godot/imported/httpssteamusercontentaakamaihdnetugc1009314622592804171A377351B39A15DDBF68C620AF18926FD0916894D.png-eb85ed1c1eacc9e3d7873a0d1d1b49dd.ctex"]
+source_file="res://Images/attacks2.png"
+dest_files=["res://.godot/imported/attacks2.png-e606d82da36737e9818e8fd86a9132fe.ctex"]
 
 [params]
 
