@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw5t7hvhydy2g"]
+
+[ext_resource type="PackedScene" uid="uid://d0xo8vjh5ylkn" path="res://Scenes/Slot.tscn" id="1_lqpix"]
+
+[node name="Slots" type="Node2D"]
+
+[node name="Slot5" parent="." instance=ExtResource("1_lqpix")]
+position = Vector2(317, 4)
+rotation = 3.14159
+
+[node name="Slot6" parent="." instance=ExtResource("1_lqpix")]
+position = Vector2(105, 4)
+rotation = 3.14159
+
+[node name="Slot7" parent="." instance=ExtResource("1_lqpix")]
+position = Vector2(-108, 4)
+rotation = 3.14159
+
+[node name="Slot8" parent="." instance=ExtResource("1_lqpix")]
+position = Vector2(-321, 4)
+rotation = 3.14159

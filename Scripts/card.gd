@@ -18,12 +18,14 @@ func _ready() -> void:
 	if !is_organ:
 		get_parent().connect_card_signals(self)
 		frame_value = Globals.rng.randi_range(0, 93)
-		#position = $"../../AttackDeck".position
+		position = $"../../AttackDeck".position
 		update_frame()
 		#scale = Vector2(1.35, 1.35)
 	else:
+		#$Area2D.collision_mask = 8
+		#$Area2D.collision_layer = 8
 		$Area2D/CollisionShape2D.disabled = true
-		z_index = -1
+		z_index = -5
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

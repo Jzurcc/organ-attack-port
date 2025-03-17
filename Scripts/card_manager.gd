@@ -34,6 +34,21 @@ func start_drag(card):
 	card.scale = unscaled
 	pivot_offset = get_global_mouse_position() - card_being_dragged.position
 	card_being_dragged.get_parent().move_child(card_being_dragged, -1)
+	enable_all("Slot")
+
+
+func disable_all(scene):
+	for node in get_tree().get_nodes_in_group(scene):
+		node.visible = false
+		node.process_mode = Node.PROCESS_MODE_DISABLED
+		node.set_process(false)
+
+
+func enable_all(scene):
+	for node in get_tree().get_nodes_in_group(scene):
+		node.visible = true
+		node.process_mode = Node.PROCESS_MODE_INHERIT
+		node.set_process(false)
 
 
 func finish_drag():
@@ -41,11 +56,13 @@ func finish_drag():
 	card_being_dragged.scale = scaled
 	var slot_found = raycast_check_for_card_slot()
 	if slot_found and not slot_found.card_in_slot:
-		card_being_dragged.rotation = slot_found.rotation
-		card_being_dragged.position = slot_found.position
+		card_being_dragged.rotation = slot_found.global_rotation
+		card_being_dragged.position = slot_found.global_position
 		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
 		slot_found.card_in_slot = true
 		player_hand.remove_card_from_hand(card_being_dragged)
+		disable_all("Slot")
+		
 	else:
 		player_hand.add_card_to_hand(card_being_dragged)
 	card_being_dragged = null
@@ -92,13 +109,13 @@ func connect_card_signals(card):
 
 
 func on_hovered_over_card(card):
-	if !is_hovering_on_card:
+	if !is_hovering_on_card and !card.is_organ:
 		highlight_card(card, true)
 		is_hovering_on_card = true
 
 
 func on_hovered_off_card(card):
-	if !card_being_dragged:
+	if !card_being_dragged and !card.is_organ:
 		highlight_card(card, false)
 		var new_card_hovered = raycast_check_for_card()
 		if new_card_hovered:

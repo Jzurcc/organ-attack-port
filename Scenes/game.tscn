@@ -3,40 +3,16 @@
 [ext_resource type="Script" path="res://Scripts/card_manager.gd" id="1_k3mab"]
 [ext_resource type="PackedScene" uid="uid://c51kowxbp4fay" path="res://Scenes/Card.tscn" id="2_qk672"]
 [ext_resource type="Script" path="res://Scripts/PlayerHand.gd" id="3_c7pne"]
-[ext_resource type="PackedScene" uid="uid://d0xo8vjh5ylkn" path="res://Scenes/Slot.tscn" id="4_6sxrm"]
 [ext_resource type="PackedScene" uid="uid://uxgjsigl3jsp" path="res://Scenes/Deck.tscn" id="5_04n75"]
 [ext_resource type="Script" path="res://Scenes/InputManager.gd" id="6_jgaa6"]
+[ext_resource type="PackedScene" uid="uid://bw5t7hvhydy2g" path="res://Scenes/Slots.tscn" id="7_qu10w"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Card Manager" type="Node2D" parent="."]
+[node name="CardManager" type="Node2D" parent="."]
 script = ExtResource("1_k3mab")
 
 [node name="OrganManager" type="Node2D" parent="."]
-
-[node name="Organ2" parent="OrganManager" instance=ExtResource("2_qk672")]
-position = Vector2(649, 925)
-rotation = 3.14159
-is_organ = true
-frame = 117
-
-[node name="Organ3" parent="OrganManager" instance=ExtResource("2_qk672")]
-position = Vector2(862, 925)
-rotation = 3.14159
-is_organ = true
-frame = 116
-
-[node name="Organ4" parent="OrganManager" instance=ExtResource("2_qk672")]
-position = Vector2(1075, 925)
-rotation = 3.14159
-is_organ = true
-frame = 115
-
-[node name="Organ5" parent="OrganManager" instance=ExtResource("2_qk672")]
-position = Vector2(1287, 925)
-rotation = 3.14159
-is_organ = true
-frame = 114
 
 [node name="Organ10" parent="OrganManager" instance=ExtResource("2_qk672")]
 position = Vector2(647, 154)
@@ -107,22 +83,42 @@ is_organ = true
 frame = 105
 
 [node name="PlayerHand" type="Node2D" parent="."]
+z_index = -3
 script = ExtResource("3_c7pne")
-
-[node name="Slot" parent="." instance=ExtResource("4_6sxrm")]
-position = Vector2(1285, 201)
-
-[node name="Slot2" parent="." instance=ExtResource("4_6sxrm")]
-position = Vector2(1073, 201)
-
-[node name="Slot3" parent="." instance=ExtResource("4_6sxrm")]
-position = Vector2(860, 201)
-
-[node name="Slot4" parent="." instance=ExtResource("4_6sxrm")]
-position = Vector2(647, 201)
 
 [node name="AttackDeck" parent="." instance=ExtResource("5_04n75")]
 position = Vector2(964, 567)
 
 [node name="InputManager" type="Node2D" parent="."]
 script = ExtResource("6_jgaa6")
+
+[node name="Organ2" parent="." instance=ExtResource("2_qk672")]
+position = Vector2(649, 925)
+rotation = 3.14159
+is_organ = true
+frame = 117
+
+[node name="Organ3" parent="." instance=ExtResource("2_qk672")]
+position = Vector2(862, 925)
+rotation = 3.14159
+is_organ = true
+frame = 116
+
+[node name="Organ4" parent="." instance=ExtResource("2_qk672")]
+position = Vector2(1075, 925)
+rotation = 3.14159
+is_organ = true
+frame = 115
+
+[node name="Organ5" parent="." instance=ExtResource("2_qk672")]
+position = Vector2(1287, 925)
+rotation = 3.14159
+is_organ = true
+frame = 114
+
+[node name="Slots1" parent="." instance=ExtResource("7_qu10w")]
+position = Vector2(968, 878)
+
+[node name="Slots2" parent="." instance=ExtResource("7_qu10w")]
+position = Vector2(964, 211)
+rotation = 3.14159

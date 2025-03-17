@@ -11,8 +11,8 @@ var pivot_offset
 var deck
 
 func _ready() -> void:
-	card_manager = $"../Card Manager"
-	deck = $"../Deck"
+	card_manager = $"../CardManager"
+	deck = $"../AttackDeck"
 
 
 func _input(event):
@@ -32,6 +32,7 @@ func raycast_at_cursor():
 	parameters.collide_with_areas = true
 	var result = space_state.intersect_point(parameters)
 	if result.size() > 0:
+		print(result.size())
 		var result_collision_mask = result[0].collider.collision_mask
 		if result_collision_mask == COLLISION_MASK_CARD:
 			var card_found = result[0].collider.get_parent()
@@ -39,4 +40,3 @@ func raycast_at_cursor():
 				card_manager.start_drag(card_found)
 		elif result_collision_mask == COLLISION_MASK_DECK:
 			deck.draw_card()
-	
