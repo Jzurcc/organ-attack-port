@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://fkkrnrbnloeo"]
+
+[ext_resource type="PackedScene" uid="uid://d0xo8vjh5ylkn" path="res://Slot.tscn" id="1_jdip1"]
+
+[node name="PlayerHand" type="Node2D"]
+
+[node name="Slot" parent="." instance=ExtResource("1_jdip1")]
+position = Vector2(150, 216)
+
+[node name="Slot2" parent="." instance=ExtResource("1_jdip1")]
+position = Vector2(365, 216)
+
+[node name="Slot3" parent="." instance=ExtResource("1_jdip1")]
+position = Vector2(580, 216)
+
+[node name="Slot4" parent="." instance=ExtResource("1_jdip1")]
+position = Vector2(795, 216)

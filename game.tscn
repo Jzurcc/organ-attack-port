@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3ytk5x4w27ca"]
+[gd_scene load_steps=5 format=3 uid="uid://c3ytk5x4w27ca"]
 
 [ext_resource type="Script" path="res://card_manager.gd" id="1_np7a6"]
 [ext_resource type="PackedScene" uid="uid://c51kowxbp4fay" path="res://Card.tscn" id="1_os24g"]
+[ext_resource type="PackedScene" uid="uid://fkkrnrbnloeo" path="res://PlayerHand.tscn" id="3_4w8x0"]
+[ext_resource type="PackedScene" uid="uid://d0xo8vjh5ylkn" path="res://Slot.tscn" id="3_g7a4g"]
 
 [node name="Game" type="Node2D"]
 
@@ -9,8 +11,179 @@
 script = ExtResource("1_np7a6")
 
 [node name="Brain" parent="Card Manager" instance=ExtResource("1_os24g")]
-position = Vector2(480, 299)
-frame = 6
+position = Vector2(727, 527)
+frame = 7
 
 [node name="Heart" parent="Card Manager" instance=ExtResource("1_os24g")]
-position = Vector2(929, 345)
+position = Vector2(1022, 498)
+frame = 3
+
+[node name="Slot Manager" type="Node2D" parent="."]
+visible = false
+
+[node name="PlayerHand" parent="Slot Manager" instance=ExtResource("3_4w8x0")]
+position = Vector2(956, 918)
+
+[node name="PlayerHand2" parent="Slot Manager" instance=ExtResource("3_4w8x0")]
+position = Vector2(1761, 520)
+rotation = -1.5708
+
+[node name="PlayerHand3" parent="Slot Manager" instance=ExtResource("3_4w8x0")]
+position = Vector2(956, 164)
+rotation = 3.14159
+
+[node name="PlayerHand4" parent="Slot Manager" instance=ExtResource("3_4w8x0")]
+position = Vector2(156, 520)
+rotation = 1.5708
+
+[node name="Slot" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1199, 955)
+rotation = -3.14159
+
+[node name="Slot2" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1201, 866)
+rotation = -3.14159
+
+[node name="Slot7" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1033, 955)
+rotation = -3.14159
+
+[node name="Slot8" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1035, 866)
+rotation = -3.14159
+
+[node name="Slot10" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(872, 955)
+rotation = -3.14159
+
+[node name="Slot11" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(874, 866)
+rotation = -3.14159
+
+[node name="Slot13" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(709, 955)
+rotation = -3.14159
+
+[node name="Slot14" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(711, 866)
+rotation = -3.14159
+
+[node name="Slot4" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1201, 212)
+
+[node name="Slot6" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1198, 125)
+
+[node name="Slot17" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1035, 212)
+
+[node name="Slot18" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1032, 125)
+
+[node name="Slot20" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(874, 212)
+
+[node name="Slot21" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(871, 125)
+
+[node name="Slot23" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(711, 212)
+
+[node name="Slot24" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(708, 125)
+
+[node name="Slot25" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1763, 246)
+rotation = 1.5708
+
+[node name="Slot26" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1674, 244)
+rotation = 1.5708
+
+[node name="Slot27" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1587, 247)
+rotation = 1.5708
+
+[node name="Slot28" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1763, 412)
+rotation = 1.5708
+
+[node name="Slot29" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1674, 410)
+rotation = 1.5708
+
+[node name="Slot30" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1587, 413)
+rotation = 1.5708
+
+[node name="Slot31" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1763, 573)
+rotation = 1.5708
+
+[node name="Slot32" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1674, 571)
+rotation = 1.5708
+
+[node name="Slot33" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1587, 574)
+rotation = 1.5708
+
+[node name="Slot34" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1763, 736)
+rotation = 1.5708
+
+[node name="Slot35" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1674, 734)
+rotation = 1.5708
+
+[node name="Slot36" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(1587, 737)
+rotation = 1.5708
+
+[node name="Slot37" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(148, 730)
+rotation = -1.5708
+
+[node name="Slot38" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(237, 732)
+rotation = -1.5708
+
+[node name="Slot39" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(324, 729)
+rotation = -1.5708
+
+[node name="Slot40" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(148, 564)
+rotation = -1.5708
+
+[node name="Slot41" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(237, 566)
+rotation = -1.5708
+
+[node name="Slot42" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(324, 563)
+rotation = -1.5708
+
+[node name="Slot43" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(148, 403)
+rotation = -1.5708
+
+[node name="Slot44" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(237, 405)
+rotation = -1.5708
+
+[node name="Slot45" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(324, 402)
+rotation = -1.5708
+
+[node name="Slot46" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(148, 240)
+rotation = -1.5708
+
+[node name="Slot47" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(237, 242)
+rotation = -1.5708
+
+[node name="Slot48" parent="." instance=ExtResource("3_g7a4g")]
+position = Vector2(324, 239)
+rotation = -1.5708
