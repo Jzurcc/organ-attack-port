@@ -1213,6 +1213,7 @@ z_index = -1
 script = ExtResource("1_fnqio")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0, 0, 0, 0.560784)
 position = Vector2(0, 7.62939e-06)
 scale = Vector2(216, 301.354)

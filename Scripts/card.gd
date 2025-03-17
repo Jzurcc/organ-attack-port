@@ -17,7 +17,7 @@ var hand_pos
 func _ready() -> void:
 	if !is_organ:
 		get_parent().connect_card_signals(self)
-		frame_value = Globals.rng.randi_range(0, 93)
+		#frame_value = Globals.rng.randi_range(0, 93)
 		position = $"../../AttackDeck".position
 		update_frame()
 		#scale = Vector2(1.35, 1.35)
@@ -25,6 +25,14 @@ func _ready() -> void:
 		#$Area2D.collision_mask = 8
 		#$Area2D.collision_layer = 8
 		$Area2D/CollisionShape2D.disabled = true
+		var random_frame
+		while true:
+			random_frame = Globals.rng.randi_range(94, 117)
+			if !Globals.available_frames.has(random_frame):
+				Globals.available_frames.append(random_frame)
+				break
+		
+		$Sprite.frame = random_frame
 		z_index = -5
 
 

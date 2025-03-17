@@ -87,7 +87,7 @@ z_index = -3
 script = ExtResource("3_c7pne")
 
 [node name="AttackDeck" parent="." instance=ExtResource("5_04n75")]
-position = Vector2(964, 567)
+position = Vector2(964, 542)
 
 [node name="InputManager" type="Node2D" parent="."]
 script = ExtResource("6_jgaa6")
@@ -117,8 +117,8 @@ is_organ = true
 frame = 114
 
 [node name="Slots1" parent="." instance=ExtResource("7_qu10w")]
-position = Vector2(968, 878)
+position = Vector2(968, 840)
 
 [node name="Slots2" parent="." instance=ExtResource("7_qu10w")]
-position = Vector2(964, 211)
+position = Vector2(964, 239)
 rotation = 3.14159

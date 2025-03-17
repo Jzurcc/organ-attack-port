@@ -14,7 +14,7 @@ config/name="Organ Attack!"
 run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://Images/Title.png"
-config/icon="res://Images/Icon.png"
+config/icon="res://Images/icon.png"
 
 [autoload]
 
