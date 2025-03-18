@@ -23,6 +23,11 @@ func _input(event):
 			raycast_at_cursor()
 		else:
 			emit_signal("left_mouse_button_released")
+	elif event is InputEventKey and event.keycode == KEY_ALT:
+		if event.pressed and card_manager.hovered_card:
+			card_manager.show_enlarged_card(card_manager.hovered_card)
+		elif event.is_released() or !card_manager.hovered_card:
+			card_manager.hide_enlarged_card(card_manager.hovered_card)
 
 
 func raycast_at_cursor():
@@ -32,7 +37,6 @@ func raycast_at_cursor():
 	parameters.collide_with_areas = true
 	var result = space_state.intersect_point(parameters)
 	if result.size() > 0:
-		print(result.size())
 		var result_collision_mask = result[0].collider.collision_mask
 		if result_collision_mask == COLLISION_MASK_CARD:
 			var card_found = result[0].collider.get_parent()

@@ -1209,7 +1209,7 @@ animations = [{
 [node name="Slot" type="Node2D"]
 light_mask = 2
 visibility_layer = 2
-z_index = -1
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_fnqio")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

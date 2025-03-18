@@ -12,11 +12,16 @@ var player_hand
 var scaled = Vector2(1.05, 1.05)
 var unscaled = Vector2(1, 1)
 var input_manager
+var hovered_card
+
+@export var hover_scale = 1.05
+
+@onready var enlarged_card = $"../EnlargedCard"
 
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
-	player_hand = $"../PlayerHand"
+	player_hand = $"../PlayerHand1"
 	input_manager = $"../InputManager"
 	input_manager.connect("left_mouse_button_released", on_left_click_released)
 
@@ -56,6 +61,7 @@ func finish_drag():
 	card_being_dragged.scale = scaled
 	var slot_found = raycast_check_for_card_slot()
 	if slot_found and not slot_found.card_in_slot:
+		#card_being_dragged.z_index = -5
 		card_being_dragged.rotation = slot_found.global_rotation
 		card_being_dragged.position = slot_found.global_position
 		card_being_dragged.get_node("Area2D/CollisionShape2D").disabled = true
@@ -109,28 +115,56 @@ func connect_card_signals(card):
 
 
 func on_hovered_over_card(card):
-	if !is_hovering_on_card and !card.is_organ:
-		highlight_card(card, true)
-		is_hovering_on_card = true
+	print("hovering over ", card)
+	is_hovering_on_card = true
+	hovered_card = card
+	
+	if !card.is_organ:
+		card.z_index = 998
+		get_tree().create_tween().tween_property(card, "scale", scaled, 0.05)
+
+	if Input.is_key_pressed(KEY_ALT):
+		show_enlarged_card(card)
+
+
+func show_enlarged_card(card):
+	print(card.frame)
+	enlarged_card.frame = card.get_node("Sprite").frame
+	enlarged_card.visible = true
+	enlarged_card.modulate.a = 255
+	#tween.start()
+
+
+func hide_enlarged_card(card):
+	enlarged_card.visible = false
+	#if !is_hovering_on_card and !card.is_organ:
+		#highlight_card(card, true)
+		#is_hovering_on_card = true
 
 
 func on_hovered_off_card(card):
-	if !card_being_dragged and !card.is_organ:
-		highlight_card(card, false)
-		var new_card_hovered = raycast_check_for_card()
-		if new_card_hovered:
-			highlight_card(new_card_hovered, true)
-		else:
-			is_hovering_on_card = false
+	if !card.is_organ:
+		card.z_index = 0
+		get_tree().create_tween().tween_property(card, "scale", unscaled, 0.05)
+		is_hovering_on_card = false
+		hovered_card = null
+	
+	#if !card_being_dragged and !card.is_organ:
+		#highlight_card(card, false)
+		#var new_card_hovered = raycast_check_for_card()
+		#if new_card_hovered:
+			#highlight_card(new_card_hovered, true)
+		#else:
+			#is_hovering_on_card = false
 
 
-func highlight_card(card, hovered):
-	if hovered:
-		card.scale = scaled
-		card.z_index = 2
-	else:
-		card.scale = unscaled
-		card.z_index = 1
+#func highlight_card(card, hovered):
+	#if hovered:
+		#get_tree().create_tween().tween_property(self, "scale", scaled, 0.2)
+		##card.z_index = 3
+	#else:
+		#get_tree().create_tween().tween_property(card, "scale", unscaled, 0.2)
+		##card.z_index = 2
 		
 
 func on_left_click_released():

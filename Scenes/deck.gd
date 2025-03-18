@@ -3,7 +3,6 @@ extends Node2D
 const CARD_SCENE_PATH = "res://Scenes/Card.tscn"
 const HAND_COUNT = 1
 
-var database
 
 var attack_deck = [
 	"Immunity Boost!",
@@ -111,22 +110,21 @@ var attack_deck = [
 ]
 
 func _ready():
-	database = preload("res://Scripts/CardsDatabase.gd")
 	attack_deck.shuffle()
 	#print($Area2D.collision_mask)
 	pass
 
 
 func draw_card():
-	print("draw")
-	if $"../PlayerHand".player_hand.size() < 5:
+	if $"../PlayerHand1".player_hand.size() < 5:
 		var card_drawn = attack_deck[0]
 		var card_scene = preload(CARD_SCENE_PATH)
 		var new_card = card_scene.instantiate()
 		$"../CardManager".add_child(new_card)
-		new_card.name = "Card"
-		new_card.get_node("Sprite").frame = database.ATTACKS[card_drawn][0]
-		$"../PlayerHand".add_card_to_hand(new_card)
+		new_card.name = card_drawn
+		new_card.scale = Vector2(1, 1)
+		new_card.get_node("Sprite").frame = Globals.ATTACKS[card_drawn][0]
+		$"../PlayerHand1".add_card_to_hand(new_card)
 		attack_deck.erase(card_drawn)
 		if attack_deck.size() == 0:
 			$Area2D/CollisionShape2D.disabled = true

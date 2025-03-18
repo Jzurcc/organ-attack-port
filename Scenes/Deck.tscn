@@ -1170,6 +1170,7 @@ animations = [{
 size = Vector2(204, 286)
 
 [node name="Deck" type="Node2D"]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_7f51p")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

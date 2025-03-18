@@ -1207,6 +1207,7 @@ size = Vector2(204, 286)
 [sub_resource type="CanvasTexture" id="CanvasTexture_b7bdc"]
 
 [node name="Card" type="Node2D"]
+scale = Vector2(0.42, 0.42)
 script = ExtResource("1_c3fh6")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
