@@ -9,10 +9,13 @@ const COLLISION_MASK_DECK = 4
 var card_manager
 var pivot_offset
 var deck
+var player_hand
+var tab_pressed = false
 
 func _ready() -> void:
 	card_manager = $"../CardManager"
 	deck = $"../AttackDeck"
+	player_hand = $"../CardManager/PlayerHand1"
 
 
 func _input(event):
@@ -24,10 +27,17 @@ func _input(event):
 		else:
 			emit_signal("left_mouse_button_released")
 	elif event is InputEventKey and event.keycode == KEY_ALT:
-		if event.pressed and card_manager.hovered_card:
+		if event.is_released():
+			if !card_manager.hovered_card or card_manager.hovered_card.is_organ or event.is_released():
+				card_manager.hide_enlarged_card(card_manager.hovered_card)
+		elif event.pressed and card_manager.hovered_card:
 			card_manager.show_enlarged_card(card_manager.hovered_card)
-		elif event.is_released() or !card_manager.hovered_card:
-			card_manager.hide_enlarged_card(card_manager.hovered_card)
+	elif event is InputEventKey and event.keycode == KEY_TAB:
+		if event.pressed and !tab_pressed:
+			tab_pressed = true
+			player_hand.toggle_hand_view()
+		elif event.is_released():
+			tab_pressed = false
 
 
 func raycast_at_cursor():

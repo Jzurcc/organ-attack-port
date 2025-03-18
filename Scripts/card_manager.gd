@@ -21,7 +21,7 @@ var hovered_card
 
 func _ready() -> void:
 	screen_size = get_viewport_rect().size
-	player_hand = $"../PlayerHand1"
+	player_hand = $"../CardManager/PlayerHand1"
 	input_manager = $"../InputManager"
 	input_manager.connect("left_mouse_button_released", on_left_click_released)
 
@@ -115,9 +115,9 @@ func connect_card_signals(card):
 
 
 func on_hovered_over_card(card):
-	print("hovering over ", card)
 	is_hovering_on_card = true
 	hovered_card = card
+	print(card)
 	
 	if !card.is_organ:
 		card.z_index = 998
@@ -128,11 +128,10 @@ func on_hovered_over_card(card):
 
 
 func show_enlarged_card(card):
-	print(card.frame)
 	enlarged_card.frame = card.get_node("Sprite").frame
 	enlarged_card.visible = true
 	enlarged_card.modulate.a = 255
-	#tween.start()
+		#tween.start()
 
 
 func hide_enlarged_card(card):

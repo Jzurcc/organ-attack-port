@@ -3,32 +3,33 @@ extends Node
 
 var rng = RandomNumberGenerator.new()
 var available_frames = []
+var organ_array = ORGANS.keys()
 
 const ORGANS = { # [frame]
-	"WILD": [94],
-	"Heart": [95],
-	"Spleen": [96],
-	"Gallbladder": [97],
-	"Bowels": [98],
-	"Tongue": [99],
-	"Lungs": [100],
-	"Trachea": [101],
-	"Liver": [102],
-	"Teeth": [103],
-	"Pancreas": [104],
-	"Eyes": [105],
-	"Appendix": [106],
-	"Bladder": [107],
-	"Brain": [108],
-	"Esophagus": [109],
-	"Tonsils": [110],
-	"Stomach": [111],
-	"Thyroid": [112],
-	"Kidneys": [113],
-	"Nose": [114],
-	"Skin": [115],
-	"Bones": [116],
-	"Skeletal Muscles": [117]
+	"WILD": [90],
+	"Heart": [91],
+	"Spleen": [92],
+	"Gallbladder": [93],
+	"Bowels": [94],
+	"Tongue": [95],
+	"Lungs": [96],
+	"Trachea": [97],
+	"Liver": [98],
+	"Teeth": [99],
+	"Pancreas": [100],
+	"Eyes": [101],
+	"Appendix": [102],
+	"Bladder": [103],
+	"Brain": [104],
+	"Esophagus": [105],
+	"Tonsils": [106],
+	"Stomach": [107],
+	"Thyroid": [108],
+	"Kidneys": [109],
+	"Nose": [110],
+	"Skin": [111],
+	"Bones": [112],
+	"Skeletal Muscles": [113]
 }
 # types: affliction, wild, necrosis, metastasis, resistance, cure, poison, tactical, bureaucracy
 const ATTACKS = {# [frame, type, is_instant, [afflicts/removes], special_func]
@@ -36,7 +37,7 @@ const ATTACKS = {# [frame, type, is_instant, [afflicts/removes], special_func]
 	"Vaccine!": [1, "Resistance", false, [], null], #*
 	"Contagious!": [2, "Tactical", true, ["All"], null], #*
 	"Necrosis!": [3, "Necrosis", false, ["All"], null], #*
-	"Necrosis!F": [65, "Necrosis", true, ["All"], null], #*
+	"Necrosis!F": [64, "Necrosis", true, ["All"], null], #*
 	"Sedate!": [4, "Tactical", false, [], null], #*
 	"Metastasis!": [5, "Metastasis", true, ["All"], null], #*
 	"Cavity!": [6, "Affliction", false, ["Teeth"], null],
@@ -50,7 +51,7 @@ const ATTACKS = {# [frame, type, is_instant, [afflicts/removes], special_func]
 	"Botched Surgery!": [14, "Wild", false, ["All"], null],
 	"Stroke!": [15, "Affliction", false, ["Brain"], null],
 	"Research!": [16, "Bureaucracy", false, [], null], #*
-	"Research!F": [76, "Bureaucracy", true, [], null], #*
+	"Research!F": [119, "Bureaucracy", true, [], null], #*
 	"POISONED!": [17, "Poison", true, [], null], #*
 	"Chronic Strep Throat!": [18, "Affliction", false, ["Tonsils"], null],
 	"Crohn's!": [19, "Affliction", false, ["Bowels"], null],
@@ -119,3 +120,7 @@ const ATTACKS = {# [frame, type, is_instant, [afflicts/removes], special_func]
 	"Situs Inversus!": [87, "Tactical", true, [], null], #*
 	"Psoriasis!": [88, "Affliction", false, ["Skin"], null]
 }
+
+
+func _ready() -> void:
+	organ_array.shuffle()

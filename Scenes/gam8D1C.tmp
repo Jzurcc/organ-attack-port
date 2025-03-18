@@ -1238,21 +1238,25 @@ is_organ = true
 [node name="Organ1" parent="CardManager/PlayerOrgans2" instance=ExtResource("2_qk672")]
 position = Vector2(194.956, 727.956)
 rotation = -2.35619
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="Organ2" parent="CardManager/PlayerOrgans2" instance=ExtResource("2_qk672")]
 position = Vector2(260.717, 793.717)
 rotation = -2.35619
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="Organ3" parent="CardManager/PlayerOrgans2" instance=ExtResource("2_qk672")]
 position = Vector2(326.478, 859.478)
 rotation = -2.35619
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="Organ4" parent="CardManager/PlayerOrgans2" instance=ExtResource("2_qk672")]
 position = Vector2(392.239, 925.239)
 rotation = -2.35619
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="PlayerOrgans3" type="Node2D" parent="CardManager"]
@@ -1260,21 +1264,25 @@ is_organ = true
 [node name="Organ1" parent="CardManager/PlayerOrgans3" instance=ExtResource("2_qk672")]
 position = Vector2(391.044, 152.956)
 rotation = -0.785398
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="Organ2" parent="CardManager/PlayerOrgans3" instance=ExtResource("2_qk672")]
 position = Vector2(325.283, 218.717)
 rotation = -0.785398
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="Organ3" parent="CardManager/PlayerOrgans3" instance=ExtResource("2_qk672")]
 position = Vector2(259.522, 284.478)
 rotation = -0.785398
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="Organ4" parent="CardManager/PlayerOrgans3" instance=ExtResource("2_qk672")]
 position = Vector2(193.761, 350.239)
 rotation = -0.785398
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="PlayerOrgans4" type="Node2D" parent="CardManager"]
@@ -1300,21 +1308,25 @@ is_organ = true
 [node name="Organ1" parent="CardManager/PlayerOrgans5" instance=ExtResource("2_qk672")]
 position = Vector2(1725.04, 352.044)
 rotation = 0.785398
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="Organ2" parent="CardManager/PlayerOrgans5" instance=ExtResource("2_qk672")]
 position = Vector2(1659.28, 286.283)
 rotation = 0.785398
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="Organ3" parent="CardManager/PlayerOrgans5" instance=ExtResource("2_qk672")]
 position = Vector2(1593.52, 220.522)
 rotation = 0.785398
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="Organ4" parent="CardManager/PlayerOrgans5" instance=ExtResource("2_qk672")]
 position = Vector2(1527.76, 154.761)
 rotation = 0.785398
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="PlayerOrgans6" type="Node2D" parent="CardManager"]
@@ -1322,21 +1334,25 @@ is_organ = true
 [node name="Organ1" parent="CardManager/PlayerOrgans6" instance=ExtResource("2_qk672")]
 position = Vector2(1526.96, 927.044)
 rotation = 2.35619
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="Organ2" parent="CardManager/PlayerOrgans6" instance=ExtResource("2_qk672")]
 position = Vector2(1592.72, 861.283)
 rotation = 2.35619
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="Organ3" parent="CardManager/PlayerOrgans6" instance=ExtResource("2_qk672")]
 position = Vector2(1658.48, 795.522)
 rotation = 2.35619
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="Organ4" parent="CardManager/PlayerOrgans6" instance=ExtResource("2_qk672")]
 position = Vector2(1724.24, 729.761)
 rotation = 2.35619
+scale = Vector2(0.42, 0.42)
 is_organ = true
 
 [node name="PlayerHand1" type="Node2D" parent="CardManager"]

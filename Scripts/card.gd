@@ -31,20 +31,20 @@ func _ready() -> void:
 		get_parent().get_parent().connect_card_signals(self)
 		#$Area2D.collision_mask = 8
 		#$Area2D.collision_layer = 8
-		$Area2D.collision_mask = 8
-		var key
-		var value
-		while true:
-			var rand_int = Globals.rng.randi_range(0, 23)
-			key = Globals.ORGANS.keys()[rand_int] # rng.randi_range(94, 117)
-			value = (Globals.ORGANS[key])[0]
-			if !Globals.available_frames.has(value):
-				name = key
-				Globals.available_frames.append(value)
-				break
-		
-		$Sprite.frame = value
+		#$Area2D.collision_mask = 8
+		var i = Globals.organ_array[0]
+		Globals.organ_array.erase(i)
+		name = i
+		$Sprite.frame = (Globals.ORGANS[i])[0]
 		#z_index = -5
+		#while true:
+			#var rand_int = Globals.rng.randi_range(0, 23)
+			#key = Globals.ORGANS.keys()[rand_int] # rng.randi_range(94, 117)
+			#value = (Globals.ORGANS[key])[0]
+			#if !Globals.available_frames.has(value):
+				#name = key
+				#Globals.available_frames.append(value)
+				#break
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

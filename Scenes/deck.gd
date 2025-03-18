@@ -111,12 +111,13 @@ var attack_deck = [
 
 func _ready():
 	attack_deck.shuffle()
-	#print($Area2D.collision_mask)
-	pass
+	for i in range(5):
+		draw_card()
+		await get_tree().create_timer(0.2).timeout
 
 
 func draw_card():
-	if $"../PlayerHand1".player_hand.size() < 5:
+	if $"../CardManager/PlayerHand1".player_hand.size() < 5:
 		var card_drawn = attack_deck[0]
 		var card_scene = preload(CARD_SCENE_PATH)
 		var new_card = card_scene.instantiate()
@@ -124,7 +125,7 @@ func draw_card():
 		new_card.name = card_drawn
 		new_card.scale = Vector2(1, 1)
 		new_card.get_node("Sprite").frame = Globals.ATTACKS[card_drawn][0]
-		$"../PlayerHand1".add_card_to_hand(new_card)
+		$"../CardManager/PlayerHand1".add_card_to_hand(new_card)
 		attack_deck.erase(card_drawn)
 		if attack_deck.size() == 0:
 			$Area2D/CollisionShape2D.disabled = true
